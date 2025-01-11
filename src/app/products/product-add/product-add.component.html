@@ -1,0 +1,43 @@
+<!-- -->
+
+<button class="btn btn-secondary" id="new=product-button"
+        type="button" data-bs-toggle="modal" data-bs-target="#product-add-modal">
+  New Product
+</button>
+
+<div class="modal fade" id="product-add-modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">Add Product</h1>
+        <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="new-product-form" (ngSubmit)="addProduct($event)">
+          <div class="mb-3">
+            <label class="form-label" for="product-name">Product Name</label>
+            <input class="form-control" id="product-name"
+                   name="product-name" required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="product-price">Product Price</label>
+            <input class="form-control" id="product-price"
+                   type="number" min="0.01" step="0.01"
+                   placeholder="$"
+                   name="product-price" required/>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary"
+                type="button" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button class="btn btn-primary" type="submit"
+                form="new-product-form">
+          Add Product
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

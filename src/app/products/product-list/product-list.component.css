@@ -1,0 +1,10 @@
+#products
+{
+  max-width: 600px;
+  width: 50%;
+}
+
+#products > button
+{
+  padding: 1rem 3rem;
+}

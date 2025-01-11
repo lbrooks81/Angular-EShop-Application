@@ -1,0 +1,30 @@
+<div class="card mt-4">
+  <div class="card-body">
+    <h4 class="card-title">Product Details</h4>
+    <h3 class="card-subtitle mb-2 text-body-secondary">{{ product?.name | uppercase }}</h3>
+    <div class="card-text">
+      <div class="text-body-secondary fs-5">
+        {{ product?.price | currency: 'USD' }}
+      </div>
+      @switch(product?.name)
+      {
+        @case ('Webcam')
+        {
+          <p>Product is used for video</p>
+        }
+        @case ('Microphone')
+        {
+          <p>Product is used for audio</p>
+        }
+        @default
+        {
+          <p>Product is for general use</p>
+        }
+      }
+    </div>
+    <button (click)="buy()"
+            class="btn btn-success">
+      Buy Now
+    </button>
+  </div>
+</div>

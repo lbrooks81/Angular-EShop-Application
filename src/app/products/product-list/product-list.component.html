@@ -1,0 +1,31 @@
+<h1 class="m-4">Product List</h1>
+<div class="list-group" id="products">
+  @for(product of products | sort; track $index)
+  {
+    <button
+      class="list-group-item
+   list-group-item-action" type="button"
+      (click)="changeActive($event, product)">
+      {{$index + 1}}. {{ product.name }}
+    </button>
+  }
+  @empty
+  {
+      <p class="text-danger mt-3 fs-5">No products available.</p>
+  }
+</div>
+
+@if (selectedProduct)
+{
+  <app-product-detail
+    [product]="selectedProduct"
+    (bought)="onBuy()" />
+}
+@else
+{
+  <p class="text-danger mt-3 fs-5">
+    No product selected
+  </p>
+}
+
+<app-product-add (newProductCreated)="onNewProductAdded($event)"/>
