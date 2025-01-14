@@ -1,9 +1,12 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {Product} from '../product';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-product-add',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './product-add.component.html',
   standalone: true,
   styleUrl: './product-add.component.css'
